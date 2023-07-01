@@ -20,11 +20,13 @@ const columnHandler = (section, cols, totalCols) => {
 const renderColContent = (group) => {
   let colImage;
 
+  if (!group) return;
+
   if (group['textOrImage'] && group['image']) {
     colImage = group['image'];
     return (
       <div className="singlecol p-4">
-        <img className="object-cover" src={colImage["sourceUrl"]} />
+        <img className="object-cover w-full" src={colImage["sourceUrl"]} />
       </div>
     )
   }
@@ -42,10 +44,14 @@ const VariableContent = (section) => {
   } = section;
 
   const totalCols = calcTotalCols(cols);
+  let containerName = '';
+  if (cols === '1') {
+    containerName = 'max-w-6xl';
+  }
 
   return (
     <section className="variable-content">
-      <div className={'container flex flex-wrap cols-' + cols}>
+      <div className={'container flex flex-wrap cols-' + cols + ' ' + containerName}>
         {columnHandler(section, cols, totalCols)}
       </div>
     </section>

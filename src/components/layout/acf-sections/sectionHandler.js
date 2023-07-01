@@ -1,8 +1,10 @@
+import BookingSection from './BookingSection';
 import contactForm from './ContactForm';
 import CustomerStories from './CustomerStories';
 import hero_section from './hero_section';
 import TextBgCenter from './TextBgCenter';
 import TreatmentImgGrid from './TreatmentImgGrid';
+import TxIcons from './TxIcons';
 import VariableContent from './VariableContent';
 
 const flexibleContentHandler = (sections) => {
@@ -26,6 +28,12 @@ const flexibleContentHandler = (sections) => {
 
       case 'Page_Sektioner_FlexibleContent_ContactForm':
         return contactForm(section);
+
+      case 'Page_Sektioner_FlexibleContent_BookingSection':
+        return BookingSection(section);
+      
+      case 'Page_Sektioner_FlexibleContent_TxIcons':
+        return TxIcons(section);
     }
   }
 

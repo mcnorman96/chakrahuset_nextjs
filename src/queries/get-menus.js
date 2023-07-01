@@ -2,9 +2,6 @@ import { gql } from "@apollo/client";
 import MenuFragment from "./fragments/menus";
 
 export const HeaderFooter = `
-  header: siteLogo {
-    sourceUrl
-  }
   headerMenus: menuItems(where: {location: MAIN_MENU, parentId: "0"}) {
     edges {
       node {

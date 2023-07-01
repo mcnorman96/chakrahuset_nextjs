@@ -4,8 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
 @import "libraries/nprogress";
 
-// @import 'stylesheet.scss';
-
 section {
   margin-top: 100px;
 
@@ -44,16 +42,27 @@ div {
 
 @layer components {
   .button-primary {
-    @apply bg-green-800 text-white rounded-2xl transition-all duration-300 ease-linear pt-2 pb-2 px-5 inline-block mt-5;
+    @apply bg-green-800 text-white rounded-md transition-all duration-300 ease-linear pt-2 pb-2 px-5 inline-block mt-5 hover:bg-black;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
   }
 
   .button-secondary {
-    @apply bg-green-800 text-white rounded-2xl transition-all duration-300 ease-linear pt-2 pb-2 px-5 inline-block mt-2;
+    @apply bg-green-800 text-white rounded-md transition-all duration-300 ease-linear pt-2 pb-2 px-5 inline-block mt-2 hover:bg-black hover:tx-white;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
   }
 
   .container {
     @apply relative max-w-7xl m-auto px-4;
   }
+  .primaryMenu > a:last-child {
+    position: absolute;
+    right: 0;
+    @apply bg-green-800 text-white rounded-md transition-all duration-300 ease-linear pt-2 pb-2 px-5 inline-block hover:bg-black;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+p {
+  margin: 0 0 20px;
 }
 
 .cols-2 .singlecol {
@@ -62,50 +71,40 @@ div {
 
 .cols-3 .singlecol {
   width: 50%;
-
 }
 
 .cols-4 .singlecol {
   width: 50%;
-
 }
 
 .cols-5 .singlecol {
   width: 50%;
-
 }
 
 .cols-6 .singlecol {
   width: 50%;
-
 }
 
 .cols-7 .singlecol {
   width: 50%;
-
 }
 
 .cols-8 .singlecol {
   width: 50%;
-
 }
 
 .cols-9 .singlecol {
   width: 50%;
-
 }
 
 .cols-10 .singlecol {
   width: 50%;
-
 }
 
 .cols-11 .singlecol {
   width: 50%;
-
 }
 
 .cols-12 .singlecol {
   width: 50%;
-
 }

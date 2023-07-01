@@ -42,7 +42,7 @@ const CustomerStories = (section) => {
           })}
 
         </div>
-        <div className='absolute right-0 top-1/2 bottom-0 cursor-pointer -mr-8 h-10 w-10' onClick={() => slideHandler('next')}>
+        <div className='absolute right-0 top-0 bottom-0 cursor-pointer -mr-8 h-10 w-10' onClick={() => slideHandler('next')}>
           <KeyboardArrowRightIcon className="h-10 w-10 text-white" />
         </div>
       </div>

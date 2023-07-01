@@ -9,7 +9,6 @@ const TextBgCenter = (section) => {
     bg,
     button
   } = section;
-  console.log(section);
 
   return (
     <section className="text-bg-center p-10" style={{ 'background': backgroundColor }}>

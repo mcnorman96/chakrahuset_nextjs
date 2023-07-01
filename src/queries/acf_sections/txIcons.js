@@ -11,6 +11,7 @@ export const TxIcons = `
         title
         sizes
         srcSet
+        sourceUrl
       }
     }
   }
