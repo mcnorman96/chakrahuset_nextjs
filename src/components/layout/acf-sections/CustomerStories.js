@@ -3,7 +3,7 @@ import singleCustomerStory from '../section_components/singleCustomerStory';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
-const CustomerStories = (section) => {
+const CustomerStories = ({section}) => {
   const {
     headline,
     clientStories,
@@ -29,21 +29,19 @@ const CustomerStories = (section) => {
   }
 
   return (
-    <section className="client-stories-grid p-10" style={{ 'background': backgroundColor }}>
-      <h2 className='mb-2 font-bold tracking-tigh text-white text-center'>{headline}</h2>
-      <div className="slidecontainer relative max-w-2xl m-auto">
-        <div className='absolute left-0 top-0 bottom-0 cursor-pointer -ml-8 h-10 w-10' onClick={() => slideHandler('prev')}>
-          <KeyboardArrowLeftIcon className="h-10 w-10 text-white" />
+    <section className="p-10 client-stories-grid" style={{ 'background': backgroundColor }}>
+      <h2 className='mb-2 font-bold text-center text-white tracking-tigh max-lg:text-2xl'>{headline}</h2>
+      <div className="relative max-w-2xl m-auto slidecontainer">
+        <div className='absolute left-0 w-10 h-10 -ml-8 -translate-y-1/2 cursor-pointer top-1/2' onClick={() => slideHandler('prev')}>
+          <KeyboardArrowLeftIcon className="w-10 h-10 text-white" />
         </div>
-        <div className="slider text-white relative m-auto max-w-2xl flex px-5 overflow-hidden">
-
+        <div className="relative flex max-w-2xl px-5 m-auto overflow-hidden text-white slider">
           {clientStories && clientStories.map((customerStory, index) => {
             return singleCustomerStory(customerStory, activeSlide, index);
           })}
-
         </div>
-        <div className='absolute right-0 top-0 bottom-0 cursor-pointer -mr-8 h-10 w-10' onClick={() => slideHandler('next')}>
-          <KeyboardArrowRightIcon className="h-10 w-10 text-white" />
+        <div className='absolute right-0 w-10 h-10 -mr-8 -translate-y-1/2 cursor-pointer top-1/2' onClick={() => slideHandler('next')}>
+          <KeyboardArrowRightIcon className="w-10 h-10 text-white" />
         </div>
       </div>
 

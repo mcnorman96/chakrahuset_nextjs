@@ -14,19 +14,19 @@ const Nav = ({ header, headerMenus, slug }) => {
 	const [isMenuVisible, setMenuVisibility] = useState(false);
 
 	return (
-		<nav className="flex items-center justify-between flex-col bg-white-500 p-6 ">
-			<div className="flex items-center flex-shrink-0 text-white mb-2">
+		<nav className="relative flex flex-col items-center justify-between py-2 bg-white-500 lg:pb-6 lg:pt-2">
+			<div className="flex items-center flex-shrink-0 mb-2 text-white">
 				<Link href="/">
 					<img src={logo?.src} alt="" width="85" height="85" />
 				</Link>
 			</div>
-			<div className="block lg:hidden">
+			<div className="absolute block lg:hidden right-5 top-14 -translate-y-2/4 ">
 				<button
 					onClick={() => setMenuVisibility(!isMenuVisible)}
-					className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+					className="flex items-center px-3 py-2 text-black-200"
 					data-cy="mmenu-btn"
 				>
-					<svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<svg className="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 						<title>Menu</title>
 						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
 					</svg>
@@ -34,32 +34,32 @@ const Nav = ({ header, headerMenus, slug }) => {
 			</div>
 			<div className={`${isMenuVisible ? 'max-h-full' : 'h-0'} w-full lg:h-full block flex-grow lg:flex lg:items-center lg:w-auto`}>
 				{headerMenus?.length ? (
-					<div className="text-sm lg:flex-grow primaryMenu container w-screen text-center">
-						{headerMenus?.map(menu => {
+					<div className="container w-screen text-sm text-center lg:flex-grow primaryMenu">
+						{headerMenus?.map((menu, index) => {
 							if (!isCustomPageUri(menu?.node?.path)) {
 								return (
 									menu?.node && menu.node?.childItems?.edges.length > 0 ?
-									<div className="block mt-4 lg:inline-block lg:mt-0 text-black-200 px-4 menu-dropDown relative group">
-											<Link data-cy="nav-item" key={menu?.node.id} href={menu?.node?.path} className='hover:text-green-600 text-xs uppercase menuItem pl-4'>
+										<div className="relative block px-4 mt-4 lg:inline-block lg:mt-0 text-black-200 menu-dropDown group" key={index}>
+											<Link data-cy="nav-item"  href={menu?.node?.path} className='pl-4 text-xs uppercase hover:text-green-600 menuItem'>
 												{menu?.node?.label}
 											</Link>
-										<ArrowDownIcon className='mr-4 ' />
-										<div className="absolute z-10 bg-white left-0 hidden group-hover:block border-green-600 border-y-2">
-											{menu.node.childItems.edges.map((childItems) => {
-												return (
-													<Link className="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-green-600 px-4 py-2 text-xs uppercase text-left w-full"
-													data-cy="nav-item" key={childItems?.node.id} href={childItems?.node?.path}>
-													{childItems?.node?.label}
-													</Link>
-												)
-											})}
+											<ArrowDownIcon className='mr-4 ' />
+											<div className="absolute left-0 z-10 hidden bg-white border-green-600 group-hover:block border-y-2">
+												{menu.node.childItems.edges.map((childItems, index) => {
+													return (
+														<Link className="block w-full px-4 py-2 mt-4 text-xs text-left uppercase lg:inline-block lg:mt-0 text-black-200 hover:text-green-600"
+															data-cy="nav-item" key={index} href={childItems?.node?.path}>
+															{childItems?.node?.label}
+														</Link>
+													)
+												})}
+											</div>
 										</div>
-									</div>
-									:
-									<Link className="text-xs uppercase block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-green-600 mr-4 menuItem px-4"
-										data-cy="nav-item" key={menu?.node.id} href={menu?.node?.path}>
-										{menu?.node?.label}
-									</Link>
+										:
+										<Link className="block px-4 mt-4 mr-4 text-xs uppercase lg:inline-block lg:mt-0 text-black-200 hover:text-green-600 menuItem"
+											data-cy="nav-item" key={index} href={menu?.node?.path}>
+											{menu?.node?.label}
+										</Link>
 								);
 							}
 						})}

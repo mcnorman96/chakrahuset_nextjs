@@ -1,5 +1,4 @@
 const SeoFragment = `
-fragment SeoFragment on PostTypeSEO {
       breadcrumbs {
         text
         url
@@ -11,7 +10,11 @@ fragment SeoFragment on PostTypeSEO {
       opengraphAuthor
       opengraphDescription
       opengraphTitle
-      schemaDetails
+      schema {
+        raw
+        articleType
+        pageType
+      }
       opengraphImage {
         sourceUrl
       }
@@ -23,7 +26,6 @@ fragment SeoFragment on PostTypeSEO {
       twitterImage {
         sourceUrl
       }
-}
 `
 
 export default SeoFragment

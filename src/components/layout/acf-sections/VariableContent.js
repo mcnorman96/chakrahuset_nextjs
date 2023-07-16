@@ -25,20 +25,20 @@ const renderColContent = (group) => {
   if (group['textOrImage'] && group['image']) {
     colImage = group['image'];
     return (
-      <div className="singlecol p-4">
+      <div className="p-4 singlecol">
         <img className="object-cover w-full" src={colImage["sourceUrl"]} />
       </div>
     )
   }
 
   return (
-    <div className="singlecol p-4">
+    <div className="p-4 singlecol">
       {renderText(group['text'])}
     </div>
   )
 }
 
-const VariableContent = (section) => {
+const VariableContent = ({section}) => {
   const {
     cols,
   } = section;

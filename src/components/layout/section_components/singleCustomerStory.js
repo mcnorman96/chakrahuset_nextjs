@@ -12,7 +12,7 @@ const singleCustomerStory = (customerStory, activeSlide, index) => {
 
 
   return (
-    <div className="text-center max-w-lg m-auto w-full min-w-full duration-700 transition-all ease-in-out" key={index} slide-index={index} style={{ 'visibility': checkVisible, 'transform': 'translateX(-' + translate + '%)' }}>
+    <div className="w-full max-w-lg min-w-full m-auto italic font-medium text-center transition-all duration-700 ease-in-out" key={index} slide-index={index} style={{ 'visibility': checkVisible, 'transform': 'translateX(-' + translate + '%)' }}>
       {clientStoryContent}
       <div className="mt-4">
         - {title}

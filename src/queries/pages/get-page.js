@@ -20,6 +20,9 @@ export const GET_PAGE = gql`
 	    content
 	    slug
 	    uri
+			seo {
+				${SeoFragment}
+			}
 			sektioner {
 				flexibleContent {
 					${hero_section}

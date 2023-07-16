@@ -22,12 +22,12 @@ const Layout = ( {data, isPost, children} ) => {
 			<Seo seo={seo} uri={uri}/>
 			<Head>
 				<link rel="shortcut icon" href={header?.favicon}/>
-				{seo?.schemaDetails ? (
+				{seo?.schema?.raw ? (
 					<script
 						type='application/ld+json'
 						className='yoast-schema-graph'
 						key='yoastSchema'
-						dangerouslySetInnerHTML={{__html: sanitize( seo.schemaDetails )}}
+						dangerouslySetInnerHTML={{__html: sanitize( seo.schema.raw )}}
 					/>
 				) : null}
 			</Head>
