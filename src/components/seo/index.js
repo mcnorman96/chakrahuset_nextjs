@@ -52,11 +52,6 @@ const Seo = ( {seo, uri} ) => {
 				site_name: opengraphSiteName
 				/* eslint-enable */
 			}}
-			twitter={{
-				handle: '@Codeytek',
-				site: '@Codeytek',
-				cardType: 'summary_large_image'
-			}}
 		/>
 	);
 };

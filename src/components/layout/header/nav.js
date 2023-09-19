@@ -44,10 +44,10 @@ const Nav = ({ header, headerMenus, slug }) => {
 												{menu?.node?.label}
 											</Link>
 											<ArrowDownIcon className='mr-4 ' />
-											<div className="absolute left-0 z-10 hidden bg-white border-green-600 group-hover:block border-y-2">
+											<div className="absolute left-0 z-10 hidden pt-3 bg-white group-hover:block">
 												{menu.node.childItems.edges.map((childItems, index) => {
 													return (
-														<Link className="block w-full px-4 py-2 mt-4 text-xs text-left uppercase lg:inline-block lg:mt-0 text-black-200 hover:text-green-600"
+														<Link className="block w-full px-4 py-3 mt-4 text-xs text-left uppercase lg:inline-block lg:mt-0 text-black-200 hover:text-green-600"
 															data-cy="nav-item" key={index} href={childItems?.node?.path}>
 															{childItems?.node?.label}
 														</Link>

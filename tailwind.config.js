@@ -25,7 +25,11 @@ module.exports = {
       minHeight: {
         'almost-screen': 'calc(-16rem + 100vh)',
         '42px': '2.625rem',
+        '500': '500px'
       },
+      minWidth: {
+        '300': '300px',
+      }
     },
   },
   variants: {},

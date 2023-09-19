@@ -18,9 +18,9 @@ const Subpage_hero = (section) => {
   } = section.props;
 
   return (
-    <section className="hero_section relative">
+    <section className="relative hero_section bg-gray-50">
       {images && renderImages(images)}
-      <div className=" bg-white text-black text-center m-auto py-16 px-40 max-w-6xl relative" style={{ marginTop: "-200px" }}>
+      <div className="relative max-w-6xl px-40 py-16 m-auto text-center text-black bg-gray-50" style={{ marginTop: "-250px" }}>
         <h1 className="text-black">
           {headline}
         </h1>
@@ -28,7 +28,7 @@ const Subpage_hero = (section) => {
           {renderText(txbox)}
           {btns && btns.map((btn, index) => {
             return (
-              <Link key={index} href={btn.btn?.url} target={btn.btn?.target} className="button-primary mt-5">
+              <Link key={index} href={btn.btn?.url} target={btn.btn?.target} className="mt-5 button-primary">
                 {btn.btn.title}
               </Link>
             )

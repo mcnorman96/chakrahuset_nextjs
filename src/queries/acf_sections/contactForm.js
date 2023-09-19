@@ -6,6 +6,8 @@ export const contact_form = `
       srcSet
       title
       uri
+      mediaItemUrl
+      sizes
     }
   }
 `
