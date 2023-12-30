@@ -3,7 +3,7 @@ import Layout from '../src/components/layout';
 import {sanitize} from '../src/utils/miscellaneous';
 import {GET_PAGE} from '../src/queries/pages/get-page';
 import {handleRedirectsAndReturnData} from '../src/utils/slug';
-import flexibleContentHandler from '../src/components/layout/acf-sections/sectionHandler';
+import flexibleContentHandler from '../src/components/layout/sections/sectionHandler';
 
 export default function Home( {data} ) {
 	return (

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { isCustomPageUri } from '../../../utils/slug';
 import logo from '../../image/Chakrahuset.png';
 import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import MegaMenu from './megaMenu';
 
 const Nav = ({ header, headerMenus, slug }) => {
-
 	if (isEmpty(headerMenus)) {
 		return null;
 	}
@@ -39,11 +39,12 @@ const Nav = ({ header, headerMenus, slug }) => {
 							if (!isCustomPageUri(menu?.node?.path)) {
 								return (
 									menu?.node && menu.node?.childItems?.edges.length > 0 ?
-										<div className="relative block px-4 mt-4 lg:inline-block lg:mt-0 text-black-200 menu-dropDown group" key={index}>
+										<div className="relative block px-4 mt-4 text-gray-600 lg:inline-block lg:mt-0 menu-dropDown group" key={index}>
 											<Link data-cy="nav-item"  href={menu?.node?.path} className='pl-4 text-xs uppercase hover:text-green-600 menuItem'>
 												{menu?.node?.label}
 											</Link>
-											<ArrowDownIcon className='mr-4 ' />
+											<ArrowDownIcon className='mr-4' style={{fill: 'grey'}} />
+											{ /* menu.node.childItems.edges && <MegaMenu children={menu.node.childItems.edges} /> */}
 											<div className="absolute left-0 z-10 hidden pt-3 bg-white group-hover:block">
 												{menu.node.childItems.edges.map((childItems, index) => {
 													return (
@@ -56,7 +57,7 @@ const Nav = ({ header, headerMenus, slug }) => {
 											</div>
 										</div>
 										:
-										<Link className="block px-4 mt-4 mr-4 text-xs uppercase lg:inline-block lg:mt-0 text-black-200 hover:text-green-600 menuItem"
+										<Link className="block px-4 mt-4 mr-4 text-xs text-gray-600 uppercase lg:inline-block lg:mt-0 hover:text-green-600 menuItem"
 											data-cy="nav-item" key={index} href={menu?.node?.path}>
 											{menu?.node?.label}
 										</Link>

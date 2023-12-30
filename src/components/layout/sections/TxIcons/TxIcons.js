@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TxIcons = ({section}) => {
+const TxIcons = (section) => {
   const {
     headline, 
     txIcons

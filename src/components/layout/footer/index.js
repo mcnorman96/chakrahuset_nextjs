@@ -3,7 +3,7 @@ import logo from '../../image/Chakrahuset.png';
 
 const Footer = () => {
 	return (
-		<footer className="py-16 bg-gray-200 ">
+		<footer className="py-16 " style={{backgroundColor: '#eeeeee'}}>
 			<div className="container flex flex-col flex-wrap lg:flex-row max-lg:text-center">
 				<div className="mx-auto lg:w-1/3">
 					<Link href="/">

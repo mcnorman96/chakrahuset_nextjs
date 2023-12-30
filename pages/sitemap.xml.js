@@ -14,7 +14,7 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
           })
           .join('')}
     </urlset>
-    `;
+`;
  
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {

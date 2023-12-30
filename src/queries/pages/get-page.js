@@ -49,8 +49,20 @@ export const GET_PAGE_BY_ID = gql`
 	    slug
 	    uri
 	    seo {
-          ...SeoFragment
-        }
+				${SeoFragment}
+			}
+			sektioner {
+				flexibleContent {
+					${hero_section}
+					${contact_form}
+					${customer_stories}
+					${VariableContent}
+					${Pricelist}
+					${TextBgCenter}
+					${TreatmentImgGrid}
+					${TxIcons}
+				}
+			}
 		status
 	  }
 	}

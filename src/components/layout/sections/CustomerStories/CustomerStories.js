@@ -1,14 +1,13 @@
 import { useState } from 'react'
-import singleCustomerStory from '../section_components/singleCustomerStory';
+import singleCustomerStory from './singleCustomerStory';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
-const CustomerStories = ({section}) => {
-  const {
-    headline,
-    clientStories,
-    backgroundColor,
-  } = section;
+const CustomerStories = ({ 
+  headline,
+  clientStories,
+  backgroundColor
+}) => {
 
   const [activeSlide, setActiveSlide] = useState(0);
 

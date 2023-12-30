@@ -7,9 +7,9 @@ import {sanitize} from '../../../src/utils/miscellaneous';
 import {
 	getLoginPreviewRedirectUrl
 } from '../../../src/utils/redirects';
-import flexibleContentHandler from '@/components/layout/sections/sectionHandler';
 
 const PagePreview = ( { data } ) => {
+	console.log(data);
 	return (
 		<Layout data={data}>
 			{data?.page?.content ? <div dangerouslySetInnerHTML={{ __html: sanitize(data?.page?.content ?? {}) }} /> : null}

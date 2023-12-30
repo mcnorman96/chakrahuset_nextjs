@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import Layout from '../src/components/layout';
 import { FALLBACK, handleRedirectsAndReturnData, isCustomPageUri } from '../src/utils/slug';
 import { sanitize } from '../src/utils/miscellaneous';
-import flexibleContentHandler from '../src/components/layout/acf-sections/sectionHandler';
+import flexibleContentHandler from '../src/components/layout/sections/sectionHandler';
 
 const Page = ({ data }) => {
 	const router = useRouter();

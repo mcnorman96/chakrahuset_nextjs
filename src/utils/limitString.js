@@ -8,3 +8,13 @@ export const truncateString = (str, num) => {
   // Return str truncated with '...' concatenated to the end of str.
   return str.slice(0, num) + '...'
 }
+
+export const TruncatedHtml = ( content, maxLength ) => {
+  if (content.length <= maxLength) {
+    return <div dangerouslySetInnerHTML={{ __html: content }} />;
+  }
+
+  const truncatedContent = content.substring(0, maxLength) + '...';
+
+  return <div dangerouslySetInnerHTML={{ __html: truncatedContent }} />;
+}

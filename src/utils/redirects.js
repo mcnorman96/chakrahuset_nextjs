@@ -8,7 +8,9 @@ export const getPreviewRedirectUrl = ( postType = '', previewPostId = '' ) => {
 
 	switch ( postType ) {
 	case 'post':
-		return `/blog/preview/${previewPostId}/`;
+		return `/post/preview/${previewPostId}/`;
+	case 'behandlinger':
+		return `/treatment/preview/${previewPostId}/`;
 	case 'page':
 		return `/page/preview/${previewPostId}/`;
 	default:

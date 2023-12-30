@@ -1,7 +1,7 @@
-import renderText from '@/utils/renderText';
+import renderText from '../../../../utils/renderText';
 import React from 'react'
 
-const Pricelist = ({ section }) => {
+const Pricelist = ( section ) => {
   const {
     priceHeadline,
     pricelist

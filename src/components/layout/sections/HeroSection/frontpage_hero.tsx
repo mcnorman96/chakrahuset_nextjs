@@ -1,7 +1,18 @@
-import Link from "next/link";
-import renderText from "../../../utils/renderText";
+import renderText from '../../../../utils/renderText';
+import Button from "../../../shared/buttons/Button";
 
-const renderImages = (images) => {
+type imageType = {
+  id: string,
+  guid: string,
+  srcSet: string,
+  sizes: string,
+}
+
+type imagesType = {
+  [key:string]: imageType;
+}
+
+const renderImages = (images: imagesType) => {
   return (
     <div className="imagecontainer">
       <img className="object-cover h-screen min-w-full" src={images[0].guid} alt="" srcSet={images[0].srcSet} />
@@ -9,14 +20,14 @@ const renderImages = (images) => {
   )
 }
 
-const Frontpage_hero = (section) => {
-  const {
-    headline,
-    images,
-    txbox,
-    btns
-  } = section.props;
+type frontPageType = {
+  headline: string,
+  images: imagesType,
+  txbox: string,
+  btns: any,
+}
 
+const Frontpage_hero = ({headline, images, txbox, btns} : frontPageType) => {
   return (
     <section className="relative hero_section">
       <div className="absolute top-0 min-w-full min-h-full overlay" style={{ background: 'rgba(0, 0, 0, 0.35)' }}></div>
@@ -27,12 +38,8 @@ const Frontpage_hero = (section) => {
         </h1>
         <div className="tx">
           {renderText(txbox)}
-          {btns && btns.map((btn, index) => {
-            return (
-              <Link key={index} href={btn.btn?.url} target={btn.btn?.target} className="mt-5 button-primary">
-                {btn.btn.title}
-              </Link>
-            )
+          {btns && btns.map((btn: string[], index: number) => {
+            return <Button key={index} {...btn} />
           })}
         </div>
       </div>

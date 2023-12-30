@@ -6,7 +6,11 @@ module.exports = {
   },
   purge: [
     './src/components/**/*.js',
+    './src/components/**/*.ts',
+    './src/components/**/*.tsx',
     './pages/**/*.js',
+    './pages/**/*.ts',
+    './pages/**/*.tsx',
   ],
   theme: {
     extend: {
