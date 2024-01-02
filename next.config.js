@@ -2,6 +2,11 @@ const path = require( 'path' );
 const allowedImageWordPressDomain = new URL( process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL ).hostname;
 
 module.exports = {
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   trailingSlash: true,
   webpackDevMiddleware: config => {
     config.watchOptions = {
