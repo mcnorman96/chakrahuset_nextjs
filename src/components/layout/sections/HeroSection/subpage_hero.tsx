@@ -38,7 +38,7 @@ const Subpage_hero = ({headline, images, txbox, btns} : frontPageType) => {
         </h1>
         <div className="tx">
           {renderText(txbox)}
-          {btns && btns.map((btn: string[], index: number) => {
+          {btns && btns.map((btn: any, index: number) => {
             return <Button key={index} {...btn} />
           })}
         </div>
