@@ -7,7 +7,7 @@ import {sanitize} from '../../../src/utils/miscellaneous';
 import {
 	getLoginPreviewRedirectUrl
 } from '../../../src/utils/redirects';
-import flexibleContentHandler from '@/components/layout/sections/sectionHandler';
+import flexibleContentHandler from '../../../src/components/layout/sections/sectionHandler';
 
 const PagePreview = ( { data } ) => {
 	return (
