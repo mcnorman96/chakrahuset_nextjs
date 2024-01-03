@@ -8,7 +8,7 @@ import TreatmentImgGrid from './TreatmentImgGrid/TreatmentImgGrid';
 import TxIcons from './TxIcons/TxIcons';
 import VariableContent from './VariableContent/VariableContent';
 
-const sectionHandler = {
+const sectionHandler: any = {
   'Page_Sektioner_FlexibleContent_HeroSection': Hero_section,
   'Page_Sektioner_FlexibleContent_TreatmentImgGrid': TreatmentImgGrid,
   'Page_Sektioner_FlexibleContent_CustomerStories': CustomerStories,
